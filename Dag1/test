@@ -1,0 +1,21 @@
+arr = ['one1nine', 'eightwo', 'oneight234', 'threesixnine']
+
+number_mapping = {
+    'one': '1',
+    'two': '2',
+    'three': '3',
+    'four': '4',
+    'five': '5',
+    'six': '6',
+    'seven': '7',
+    'eight': '8',
+    'nine': '9'
+}
+
+for i in arr:
+    for number_word, digit in number_mapping.items():
+        while number_word in i:
+            number_index = i.find(number_word) +1
+            i = i[:number_index] + digit + i[number_index + len(number_word) - 2:]
+
+    print(i)
